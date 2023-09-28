@@ -11,49 +11,49 @@ function App() {
 
   const questions = [
     {
-      text: "ჩამოთვლილთაგან რომელია დედამიწის შუაგული? ",
+      text: "Where would you be if you were standing on the Spanish Steps? ",
       options: [
-        { id: 0, text: "დაბა ხარაგული", isCorrect: true},
-        { id: 1, text: "დაუდგენელია", isCorrect: false },
-        { id: 2, text: "სამხრეთ აფრიკასთან ახლოს", isCorrect: false },
-        { id: 3, text: "სამტრედია", isCorrect: false },
+        { id: 0, text: "Rome", isCorrect: true},
+        { id: 1, text: "Paris", isCorrect: false },
+        { id: 2, text: "Milan", isCorrect: false },
+        { id: 3, text: "NewYork", isCorrect: false },
       ],
     },
     {
-      text: "რომელი წინსართი გამოიყენება ხარაგაულში მისასალმებლად?",
+      text: "What year was the United Nations established?",
       options: [
       
-        { id: 1, text: "ვაა", isCorrect: false },
-        { id: 2, text: "ჰოო", isCorrect: false },
-        { id: 3, text: "ეეე", isCorrect: false },
-        { id: 0, text: "ოოოოოოოო", isCorrect: true },
+        { id: 1, text: "1935", isCorrect: false },
+        { id: 2, text: "1940", isCorrect: false },
+        { id: 3, text: "1805", isCorrect: false },
+        { id: 0, text: "1945", isCorrect: true },
       ], 
     },
     {
-      text: "რა ეწოდებოდა ხარაგაულს 1949 წლიდან 1976 წლამდე? ",
+      text: "How many minutes are in a full week? ",
       options: [
-        { id: 0, text: "დაბა ორჯონიკიძე", isCorrect: true },
-        { id: 1, text: "ხოროგოული", isCorrect: false },
-        { id: 2, text: "დევის ხვრელი", isCorrect: false },
-        { id: 3, text: "ჯაფარაული", isCorrect: false },
+        { id: 0, text: "10080", isCorrect: true },
+        { id: 1, text: "12000", isCorrect: false },
+        { id: 2, text: "11500", isCorrect: false },
+        { id: 3, text: "10000", isCorrect: false },
       ],
     },
     {
-      text: "რომელია ყველაზე გამორჩეული სოფელი ხარაგაულში?",
+      text: "What sports car company manufactures the 911??",
       options: [
-        { id: 0, text: "ჩხერი", isCorrect: false },
-        { id: 1, text: "თეთრაწყარო", isCorrect: true },
-        { id: 2, text: "ხიდარი", isCorrect: false },
-        { id: 3, text: "არცერთი", isCorrect: false },
+        { id: 0, text: "BMW", isCorrect: false },
+        { id: 1, text: "Porsche", isCorrect: true },
+        { id: 2, text: "FIAT", isCorrect: false },
+        { id: 3, text: "Pagani", isCorrect: false },
       ],
     },
     {
-      text: "სად მოედინება ყველაზე კარგი წყალი?",
+      text: "How many bones do we have in an ear?",
       options: [
-        { id: 0, text: "სანფრანცისკო", isCorrect: false },
-        { id: 1, text: "წყალკანალი", isCorrect: true },
-        { id: 2, text: "ბორჯომი", isCorrect: false },
-        { id: 3, text: "ერევანი", isCorrect: false },
+        { id: 0, text: "0", isCorrect: false },
+        { id: 1, text: "3", isCorrect: true },
+        { id: 2, text: "4", isCorrect: false },
+        { id: 3, text: "1", isCorrect: false },
       ],
     },
   ];
@@ -81,19 +81,18 @@ function App() {
       <h1>QUIZ</h1>
       
 
-      <h2>შენი ქულა: {score}</h2>
+      <h2>Your Score: {score}</h2>
 
       {showFinalResults ? (
         <div className="finalresults">
-          <h1>საბოლოო შედეგები</h1>
-          <h2>{score} სწორი პასუხი {questions.length}-დან = ({(score/questions.length)*100}%) </h2>
-          <h3>#ჩვენიხარაგული</h3>
+          <h1>Final Results</h1>
+          <h2>{score} correct from-{questions.length} = ({(score/questions.length)*100}%) </h2>
           <button onClick={()=> restartGame()}>RESTART</button>
         </div>
       ) : (
         <div className="questioncard">
           <h2>
-            კითხვა {currentQuestion + 1}    
+            Question {currentQuestion + 1}    
           </h2>
           <h3 className="questiontext">{questions[currentQuestion].text}</h3>
           
